@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.dndflow {
+  display: flex;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  background: #f7f7f7;
+  width: 200px;
+}
+
+.dndnode {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  width: 80%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.dndnode:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.copy-json-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.copy-json-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+
+.custom-node {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Ensure children stretch to fit the container */
+}
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.node-content input {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
 }
